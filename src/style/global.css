@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  height: -webkit-fill-available;
+  overscroll-behavior: none;
+}
+
+body {
+  font-size: 1.5rem;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  border: none;
+  background-color: inherit;
+  outline: none;
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+::-webkit-scrollbar {
+  border: none;
+  width: 1rem;
+  height: 1rem;
+  background-color: transparent;
+  display: none;
+  scrollbar-width: none; /* for firefox */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(231, 231, 231);
+  border-radius: 0.8rem;
+  background-clip: padding-box;
+  border: 0.2rem solid transparent;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+abbr {
+  text-decoration: none;
+}
