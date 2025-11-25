@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# 🎨 원클릭 컬러 변환기
+<br/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+💡 서비스 소개
+---
 
-Currently, two official plugins are available:
+개발자나 디자이너가 **색상 코드를 변환할 때 겪는 번거로움**을  
+가장 빠르고 직관적으로 해결하기 위해 만들어진 **원클릭 컬러 변환 도구**입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+HEX, RGB, HSL 등 다양한 포맷의 색상 코드를 **실시간 상호 변환**하며, 사용자 편의성을 극대화한 기능들을 제공합니다.
 
-## React Compiler
+<br/>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ 주요 기능
 
-## Expanding the ESLint configuration
+### 즉각적인 색상 코드 변환
+- HEX, RGB, HSL, RGBA, CSS 변수 등 다양한 포맷을 입력하면 모든 포맷으로 즉시 변환됩니다.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 원클릭 복사
+- 변환된 모든 색상 코드 옆에 복사 버튼이 있어 한 번의 클릭으로 코드 복사가 가능합니다.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 최근 사용 색상 저장 및 재사용
+- 자주 사용하는 색상을 하단 영역에 저장할 수 있으며 페이지를 새로고침해도 유지**되어 즉시 재사용할 수 있습니다.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 투명도(Alpha) 조절
+- 슬라이더로 투명도를 조절하면 RGBA / HSLA 코드에 실시간 반영됩니다.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<br/>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ 기술 스택
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| 구분          | 기술 스택            | 설명 |
+|--------------|----------------------|------|
+| **Frontend** | React, TypeScript    | 안정적인 타입 기반 컴포넌트 개발 |
+| **Styling**  | Emotion (CSS-in-JS)  | 동적 스타일링 및 성능 최적화 |
+| **State Mgt.** | Zustand             | 간결하고 효율적인 전역 상태 관리 |
+| **Build Tool** | Vite               | 빠르고 현대적인 번들링 환경 |
+| **Package Mgt.** | pnpm              | 효율적인 패키지 관리 |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<br/>
+
+## ⚙️ CI/CD 및 개발 환경
+
+이 프로젝트는 **GitHub Actions 기반 CI/CD**가 구성되어 있습니다.
+
+### ✔️ CI (Continuous Integration)
+- Pull Request 발생 시:
+  - `pnpm install`
+  - `pnpm lint`  
+  를 자동 실행하여 코드 품질을 검증합니다.
+
+### ✔️ CD (Continuous Deployment)
+- 빌드가 완료된 후 자동으로 배포 환경에 반영됩니다.
+
+<br/>
+
+## 🚀 시작 방법
+
+아래 명령어로 로컬 환경에서 프로젝트를 실행할 수 있습니다:
+
+```bash
+# 1. 의존성 설치
+pnpm install
+
+# 2. 로컬 개발 서버 실행
+pnpm dev
